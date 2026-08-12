@@ -1,0 +1,9 @@
+# Python 依赖
+# 数据管线
+arxiv>=2.1.0
+requests>=2.31.0
+PyYAML>=6.0
+python-dotenv>=1.0.0
+
+# 测试
+pytest>=8.0.0

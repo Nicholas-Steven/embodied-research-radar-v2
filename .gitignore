@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# 构建产物
+frontend/public/papers.json
+frontend/public/site.json
+
+# 数据（保留目录结构但忽略内容）
+data/raw/*.jsonl
+data/processed/*.jsonl
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# 系统
+.DS_Store
+Thumbs.db
+*.log

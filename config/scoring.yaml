@@ -1,0 +1,58 @@
+# 相关性评分配置（Research Relevance Score, 0-100）
+#
+# 评分由关键词权重命中 + 类别加权 + 上下文校验组成。
+# 命中词权重按词形长度递增（避免短词噪音），并区分核心词与一般词。
+
+# 核心高权关键词（命中即显著加分）
+core_terms:
+  - "force"
+  - "torque"
+  - "tactile"
+  - "haptic"
+  - "contact"
+  - "vision-force"
+  - "visuotactile"
+  - "force-torque"
+  - "f/t sensor"
+  - "wrist sensor"
+
+# 机器人操作上下文词（命中加分，验证是否真为机器人论文）
+robot_context_terms:
+  - "robot"
+  - "manipulation"
+  - "grasp"
+  - "assembly"
+  - "peg-in-hole"
+  - "insertion"
+  - "end-effector"
+  - "gripper"
+  - "manipulator"
+  - "automation"
+
+# 排除上下文（命中减分，过滤物理/材料/纯 CV 的同名词）
+exclude_context_terms:
+  - "physics"
+  - "material science"
+  - "fluid dynamics"
+  - "computational fluid"
+  - "pure computer vision"
+
+# 权重
+weights:
+  core_term_hit: 20
+  robot_context_hit: 8
+  exclude_context_hit: -25
+  has_code: 5
+  recent_venue: 5    # 顶会/顶刊
+  long_abstract: 3   # abstract 长度合理，信息量足
+
+# 分数→星级映射
+star_thresholds:
+  five_star: 85       # >=85 → ★★★★★
+  four_star: 70       # >=70 → ★★★★☆
+  three_star: 55      # >=55 → ★★★☆☆
+  two_star: 40        # >=40 → ★★★☆☆ 实际四档以下
+  one_star: 0         # 其余 ★☆☆☆☆
+
+# 通过门槛：低于此分数的论文在 Stage 2 被剔除
+pass_threshold: 40

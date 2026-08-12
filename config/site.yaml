@@ -1,0 +1,26 @@
+# Embodied Research Radar 站点配置
+site:
+  name: "Embodied Research Radar"
+  subtitle_zh: "面向机器人操作与具身智能的个人科研论文雷达"
+  subtitle_en: "A Personal Research Radar for Embodied Intelligence and Robotic Manipulation"
+  language: "zh"
+  # GitHub Pages project site base path; 留空则使用根路径
+  base_path: "/embodied-research-radar-v2"
+  # 部署目标仓库 owner/repo
+  owner: "Nicholas-Steven"
+  repo: "embodied-research-radar-v2"
+
+# arXiv 检索参数
+arxiv:
+  # arXiv API endpoint
+  api_url: "http://export.arxiv.org/api/query"
+  # 单次请求最大返回数
+  max_results_per_query: 50
+  # 初始化阶段总抓取目标
+  init_target: 400
+  # 每日抓取目标
+  daily_target: 40
+  # 请求间隔（秒），尊重 arXiv rate limit
+  sleep_seconds: 4
+  # 历史回溯天数（初始化抓取近 N 天的论文）
+  init_lookback_days: 120

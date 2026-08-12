@@ -1,0 +1,49 @@
+# arXiv Query Groups
+# 每个 group 对应一组查询短语；查询会被组合成 arXiv API 的 all:"phrase" OR ... 形式。
+# 文档明确禁止只用单一宽泛关键词（如 "robot manipulation" 或 "VLA"）。
+
+query_groups:
+
+  vision_force:
+    - "visual force fusion"
+    - "vision force fusion"
+    - "force-aware manipulation"
+    - "force torque robot manipulation"
+    - "wrist force torque"
+    - "force torque sensing manipulation"
+    - "visual force robot manipulation"
+    - "multimodal force vision robotics"
+
+  vision_tactile:
+    - "visuotactile"
+    - "visual tactile"
+    - "vision tactile manipulation"
+    - "tactile manipulation"
+    - "tactile robot learning"
+
+  contact:
+    - "contact-rich manipulation"
+    - "contact state estimation"
+    - "contact detection robotic manipulation"
+    - "contact-aware manipulation"
+
+  failure:
+    - "robotic manipulation failure detection"
+    - "robot task success prediction"
+    - "manipulation failure prediction"
+    - "execution monitoring manipulation"
+    - "runtime monitoring robot manipulation"
+
+  recovery:
+    - "robotic manipulation failure recovery"
+    - "robot recovery policy"
+    - "manipulation retry"
+    - "robot replanning failure"
+
+# 查询所属的 research topic 映射（用于打 research_topics 标签）
+group_topic_map:
+  vision_force: "vision_force"
+  vision_tactile: "vision_force"
+  contact: "vision_force"
+  failure: "failure_understanding"
+  recovery: "failure_recovery"

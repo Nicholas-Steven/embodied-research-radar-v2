@@ -1,0 +1,56 @@
+# My Research 字段配置
+#
+# 文档要求：如果不存在用户具体的论文规划数据，
+# 应做好 ABCD 字段和配置机制，保持通用占位，不要虚构分类含义。
+# 当前未发现工作目录中的论文 Excel 或 V4.2-R2 规划文件，
+# 因此 ABCD 字段保留通用占位，待用户提供后填充真实定义。
+
+my_research:
+  # 用户已有论文库 ABCD 分类体系（占位，待用户提供真实定义）
+  literature_categories:
+    A:
+      description: "待用户定义"
+      color: "#e74c3c"
+    B:
+      description: "待用户定义"
+      color: "#e67e22"
+    C:
+      description: "待用户定义"
+      color: "#3498db"
+    D:
+      description: "待用户定义"
+      color: "#95a5a6"
+  # 预留 A1/A2/B1/B2 子类扩展位
+  allow_subcategories: true
+
+  # Related To 可能值
+  related_to_values:
+    - "小论文1"
+    - "小论文2"
+    - "大论文"
+    - "背景文献"
+    - "Baseline"
+    - "Benchmark"
+    - "方法参考"
+    - "暂不相关"
+    - "待人工确认"
+
+  # Recommended Reading 可能值
+  recommended_reading_values:
+    - "重点读 Method"
+    - "重点读 Experiment"
+    - "重点读 Ablation"
+    - "只需要读 Introduction"
+    - "可快速浏览"
+
+  # Reproduction Value 可能值
+  reproduction_values:
+    - "High"
+    - "Medium"
+    - "Low"
+
+  # Core Paper Candidate
+  core_candidate_values:
+    - "Yes"
+    - "No"
+    - "Review"
